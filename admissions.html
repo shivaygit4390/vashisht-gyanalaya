@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasisht Gyanalay</title>
+    
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            primaryDark: '#0F172A',
+            secondary: '#D97706',
+            accent: '#FBBF24',
+            light: '#E2E8F0'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif']
+          },
+          boxShadow: {
+            'nav': '0 4px 20px rgba(0, 0, 0, 0.15)',
+            'button': '0 4px 10px rgba(217, 119, 6, 0.3)'
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-primaryDark dark:text-white min-h-screen font-sans">
+    
+  <!-- Navbar Start -->
+  <header class="sticky top-0 z-50 bg-primaryDark dark:bg-primaryDark text-white shadow-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-secondary p-2 rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+          </svg>
+        </div>
+        <a href="/"><div class="flex flex-col">
+          <span class="font-serif font-bold text-secondary text-2xl md:text-3xl tracking-wider">VASISHT</span>
+          <span class="text-xs font-medium tracking-wider text-light dark:text-gray-300 opacity-90">GYANALAY</span>
+        </div></a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 font-medium">
+ <a href="index.html" class="relative py-2 px-1 group border-b-2 border-secondary">
+  <i class="fas fa-home text-xl text-white"></i>
+  <span class="sr-only">Home</span>
+</a>
+
+        <a href="programme.html" class="relative  py-2  px-1 hover:text-accent transition-colors duration-300 group">
+          Programme
+          <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="admissions.html" class="relative py-2 px-1 text-accent hover:text-accent transition-colors duration-300 group">
+          Admissions
+          <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#apply" class="bg-secondary px-5 py-2 rounded-full text-white hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 shadow-button transform hover:-translate-y-0.5">
+        Reach Us
+        </a>
+      </nav>
+
+      <!-- Right Icons -->
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-full hover:bg-white/10 transition" title="Toggle Dark Mode">
+          <i class="fas fa-moon text-light w-5 h-5"></i>
+        </button>
+        <button id="menuToggle" class="md:hidden p-2 rounded hover:bg-white/10 transition">
+          <i class="fas fa-bars text-xl text-light"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-primaryDark px-6 py-4 space-y-4 font-medium text-white transition-all duration-300 transform origin-top">
+      <a href="index.html" class="block py-2 px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        <i class="fas fa-home"></i>
+        <span class="sr-only">Home</span>
+      </a>
+      <a href="programme.html" class="block py-2 px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        Programme
+      </a>
+      <a href="admissions.html" class="block py-2 text-accent px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        Admissions
+      </a>
+      <a href="/admissions.html" class="inline-block w-full text-center bg-secondary text-white px-6 py-3 rounded-full hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 mt-2">
+        Reach Us
+      </a>
+    </div>
+  </header>
+  <!-- Navbar End -->
+
+<!-- Who Should Apply -->
+<!-- Who Should Apply - Enhanced -->
+<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-28 px-6 sm:px-10 lg:px-20 overflow-hidden relative">
+
+  <!-- Decorative Blurs -->
+  <div class="absolute top-10 left-10 w-40 h-40 bg-accent opacity-10 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-10 right-10 w-60 h-60 bg-accent opacity-10 blur-3xl rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+  <h2 class="text-4xl block lg:hidden sm:text-5xl font-serif font-bold text-secondary leading-tight">
+        Who Should Apply?
+      </h2>
+    <!-- Left Vector Image -->
+    <div class="w-full lg:w-1/2" data-aos="fade-right">
+      <img src="assets/admission/who_should.png" alt="Who Should Apply" class="w-full max-w-[480px] mx-auto drop-shadow-2xl" />
+    </div>
+
+    <!-- Right Content -->
+    <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left" data-aos="fade-left">
+      <h2 class="text-4xl hidden lg:block sm:text-5xl font-serif font-bold text-secondary leading-tight">
+        Who Should Apply?
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl">
+        This programme is curated for individuals with purpose, ambition, and the drive to serve.
+      </p>
+
+      <!-- Icon Points -->
+      <div class="space-y-6">
+        
+        <!-- Item -->
+        <div class="flex items-start gap-4 group">
+          <div class="text-3xl text-accent w-10 shrink-0 mt-1">
+            <i class="fas fa-user-graduate group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <span class="font-semibold text-secondary">UPSC aspirants</span> seeking a disciplined and immersive residential ecosystem.
+          </p>
+        </div>
+
+        <!-- Item -->
+        <div class="flex items-start gap-4 group">
+          <div class="text-3xl text-accent w-10 shrink-0 mt-1">
+            <i class="fas fa-user-tie group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <span class="font-semibold text-secondary">Graduates & final-year students</span> who are committed to contributing to public life.
+          </p>
+        </div>
+
+        <!-- Item -->
+        <div class="flex items-start gap-4 group">
+          <div class="text-3xl text-accent w-10 shrink-0 mt-1">
+            <i class="fas fa-bullseye group-hover:scale-110 transition-transform"></i>
+          </div>
+          <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <span class="font-semibold text-secondary">Young professionals</span> with leadership ambition in civil services, politics, or governance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- who should apply ends -->
+
+<!-- What You Will Gain -->
+<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Heading -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-serif font-bold text-secondary mb-4">What You Will Gain</h2>
+      <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        A transformation that goes beyond exams—equipping you for life, leadership, and legacy.
+      </p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 text-gray-800 dark:text-white">
+      
+      <!-- Card 1 -->
+      <div class="flex flex-col gap-4 items-start hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up">
+        <div class="text-accent text-3xl"><i class="fas fa-book-reader"></i></div>
+        <h3 class="text-xl font-bold">Exam Strategy Mastery</h3>
+        <p class="opacity-90">In-depth understanding of the UPSC syllabus and exam approach across all stages.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col gap-4 items-start hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-accent text-3xl"><i class="fas fa-certificate"></i></div>
+        <h3 class="text-xl font-bold">Future-Ready Certifications</h3>
+        <p class="opacity-90">Courses on governance, innovation, and public leadership from top institutes.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col gap-4 items-start hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-accent text-3xl"><i class="fas fa-lightbulb"></i></div>
+        <h3 class="text-xl font-bold">Leadership Exposure</h3>
+        <p class="opacity-90">Real-world tools in policy thinking, ethics, and strategic decision-making.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex flex-col gap-4 items-start hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-accent text-3xl"><i class="fas fa-network-wired"></i></div>
+        <h3 class="text-xl font-bold">Valuable Networks</h3>
+        <p class="opacity-90">Collaborate with like-minded peers, top mentors, and guest faculty from diverse fields.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flex flex-col gap-4 items-start hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+        <div class="text-accent text-3xl"><i class="fas fa-mountain"></i></div>
+        <h3 class="text-xl font-bold">Personal Transformation</h3>
+        <p class="opacity-90">Personal transformation in confidence, discipline, and vision</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- what youll gain ends -->
+
+<!-- Application Process Timeline -->
+<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Section Heading -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-serif font-bold text-secondary mb-4">Application Process</h2>
+      <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        A simple and guided 4-step journey to begin your transformation.
+      </p>
+    </div>
+
+    <!-- Timeline Steps -->
+    <div class="relative border-l-4 border-accent dark:border-accent/60 ml-6 space-y-14">
+      <!-- Step 1 -->
+      <div class="relative pl-10 group" data-aos="fade-up">
+        <div class="absolute -left-6 top-1.5 w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center shadow-lg">
+          <i class="fas fa-file-alt text-sm"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary mb-2">Step 1: Application Form</h3>
+        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+          Fill out the application form with personal, academic, and intent details.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative pl-10 group" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -left-6 top-1.5 w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center shadow-lg">
+          <i class="fas fa-comments text-sm"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary mb-2">Step 2: Interview Round</h3>
+        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+          Shortlisted candidates may be invited for an interview.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative pl-10 group" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute -left-6 top-1.5 w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center shadow-lg">
+          <i class="fas fa-user-check text-sm"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary mb-2">Step 3: Final Selection</h3>
+        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+          Final selections will be based on profile and interview performance.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="relative pl-10 group" data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute -left-6 top-1.5 w-6 h-6 bg-accent text-white rounded-full flex items-center justify-center shadow-lg">
+          <i class="fas fa-envelope-open-text text-sm"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-secondary mb-2">Step 4: Admission & Onboarding</h3>
+        <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+          Selected candidates will receive formal admission and onboarding details.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- process admission ends -->
+<!-- Fee Structure & Scholarships -->
+
+<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-20 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-4xl mx-auto text-center space-y-10" data-aos="fade-up">
+    
+    <h2 class="text-4xl sm:text-5xl font-serif font-bold text-secondary">
+      Fee Structure & Scholarships
+    </h2>
+
+    <div class="bg-white dark:bg-[#111827] border border-accent/30 rounded-2xl shadow-lg p-8 space-y-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+      <p><i class="fas fa-rupee-sign text-accent mr-2"></i><strong>Transparent, inclusive fee model</strong> — includes tuition, food & lodging</p>
+      <p><i class="fas fa-hand-holding-heart text-accent mr-2"></i><strong>Need- and merit-based scholarships</strong> available for deserving candidates</p>
+    </div>
+
+    <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+      *Exact fee details and scholarship forms will be shared with shortlisted applicants during the interview process.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- fee str ends -->
+
+<!-- Contact Us Section -->
+<!-- Premium Contact Section -->
+<section class="bg-white dark:bg-[#0F172A] relative overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-60 h-60 rounded-full bg-accent blur-[100px]"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-accent blur-[100px]"></div>
+  </div>
+
+  <!-- Map (Reduced height & no hover effects) -->
+  <div class="w-full h-[180px] md:h-[240px] lg:h-[280px] overflow-hidden relative">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.563803711266!2d76.78338319678954!3d31.094058200000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39055bc3ffffffff%3A0x129672f9a293acbb!2sRamshehar%20Fort%20Resort!5e0!3m2!1sen!2sin!4v1754126456701!5m2!1sen!2sin"
+      class="w-full h-full border-0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- Gradient divider -->
+  <div class="h-8 bg-gradient-to-b from-transparent via-white/80 to-white dark:via-[#0F172A]/80 dark:to-[#0F172A]"></div>
+
+  <!-- Contact Content -->
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 sm:px-10 py-16 lg:py-24 relative z-10">
+    
+    <!-- Left: Info -->
+    <div class="flex flex-col justify-center space-y-8" data-aos="fade-right">
+      <div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          Contact <span class="text-accent relative">Us</span>
+        </h2>
+        <div class="w-24 h-1 bg-accent rounded-full"></div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-gray-700">
+          <div class="text-accent text-2xl mt-1">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-lg text-gray-800 dark:text-gray-200">Admissions Team – Abhimanu IAS</p>
+            <div class="mt-2">
+              <a href="https://wa.me/919501114021" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-accent-dark transition-colors" target="_blank">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span>9501114021</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-gray-700">
+          <div class="text-accent text-2xl mt-1">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <p class="font-semibold text-lg text-gray-800 dark:text-gray-200">Email Us</p>
+            <div class="mt-2">
+              <a href="mailto:contact@abhimanuias.com" class="inline-flex items-center gap-2 text-accent font-semibold hover:text-accent-dark transition-colors">
+                <i class="fas fa-at"></i>
+                <span>xyz@abhimanuias.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative p-6 rounded-xl overflow-hidden bg-gradient-to-r from-accent/10 to-transparent border border-accent/20">
+        <div class="absolute -top-4 -right-4 text-accent/10 text-7xl">
+          <i class="fas fa-quote-right"></i>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 italic relative z-10">
+          "Forge your destiny in the lap of heritage. Learn to lead, serve, and inspire — with the power of knowledge, technology, and vision."
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="relative" data-aos="fade-left" data-aos-delay="100">
+      <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-accent/10 blur-xl"></div>
+      <form class="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl p-8 space-y-6 relative z-10 hover:shadow-accent/10 transition-shadow duration-500">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Get in Touch</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">We'll respond within 24 hours</p>
+        
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+            <div class="relative">
+              <input type="text" required placeholder="Your full name"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent pl-12" />
+              <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Phone / WhatsApp</label>
+            <div class="relative">
+              <input type="tel" required placeholder="Enter contact number"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent pl-12" />
+              <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Message</label>
+            <div class="relative">
+              <textarea rows="4" required placeholder="Your query or message"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent pl-12"></textarea>
+              <div class="absolute left-4 top-4 text-gray-400">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-accent to-accent from-accent-dark hover:bg-[#d97706]  text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+          <i class="fas fa-paper-plane"></i>
+          <span>Send Message</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- contact form ends here -->
+
+
+
+  <!-- Footer -->
+<footer class="bg-primaryDark text-white py-10">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Left: Logo & Info -->
+      <div class="mb-6 md:mb-0">
+        <div class="flex items-center space-x-3">
+          <div class="bg-secondary p-2 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-secondary text-2xl tracking-wider">VASISHT GYANALAY</span>
+          </div>
+        </div>
+        <p class="mt-4 text-light max-w-xs">
+          Excellence in education since 2010, transforming lives through knowledge.
+        </p>
+      <p class="mt-2 text-sm text-light/80 flex flex-col gap-1">
+  <span class="flex items-center gap-2">
+    <i class="fa-solid fa-location-dot text-accent"></i>
+    <a href="#!" class="hover:text-accent  underline-offset-2" title="View Location on Map">
+      Fort Ramshehar, Himachal Pradesh
+    </a>
+  </span>
+  <span class="flex items-center gap-2">
+    <i class="fa-brands fa-whatsapp text-green-500"></i>
+    WhatsApp: 9501114021
+  </span>
+</p>
+
+      </div>
+
+      <!-- Right: Social Links -->
+      <div class="flex space-x-6">
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Strip -->
+    <div class="border-t border-primary/30 mt-8 pt-6 text-center text-light text-sm space-y-2">
+      <p>&copy; <span id="footerYear"></span> Vasisht Gyanalay. All rights reserved.</p>
+      <p class="text-[13px] text-gray-400 italic">
+        “Forge your destiny in the lap of heritage. Learn to lead, serve, and inspire — with the power of knowledge, technology, and vision.”
+      </p>
+    </div>
+
+    <!-- Hidden Dev Credit Strip -->
+    <div class="mt-4 text-center text-[12px] text-gray-500 hover:text-accent transition">
+      <a href="#!" title="Reach out to the technical team behind this site">
+        Reach out to the developer →
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Apply saved theme on page load
+  if (localStorage.theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+
+</body>
+</html>
