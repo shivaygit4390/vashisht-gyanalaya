@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasisht Gyanalay</title>
-    
+   <link rel="stylesheet" href="index.css"> 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -48,7 +48,7 @@
             <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
           </svg>
         </div>
-       <a href="/"><div class="flex flex-col">
+       <a href="index.html"><div class="flex flex-col">
           <span class="font-serif font-bold text-secondary text-2xl md:text-3xl tracking-wider">VASISHT</span>
           <span class="text-xs font-medium tracking-wider text-light dark:text-gray-300 opacity-90">GYANALAY</span>
         </div></a>
@@ -69,7 +69,7 @@
           Admissions
           <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="/admissions.html" class="bg-secondary px-5 py-2 rounded-full text-white hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 shadow-button transform hover:-translate-y-0.5">
+        <a href="./admissions.html" class="bg-secondary px-5 py-2 rounded-full text-white hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 shadow-button transform hover:-translate-y-0.5">
            Reach Us
         </a>
       </nav>
@@ -106,9 +106,8 @@
 
 
 <!-- What the Programme Includes -->
-<!-- ENHANCED: What the Programme Includes -->
-<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
-  <div class="max-w-6xl mx-auto space-y-24">
+<section id="includes" class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto space-y-20">
 
     <!-- Heading -->
     <div class="text-center">
@@ -124,19 +123,22 @@
     <!-- Blocks -->
     <div class="space-y-16">
 
+      <!-- Block Template (x5) -->
       <!-- Block 1 -->
       <div class="flex flex-col lg:flex-row items-center gap-10 group">
         <div class="w-full lg:w-5/12">
           <div class="bg-gradient-to-br from-accent/20 via-white/10 to-transparent p-1 rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl h-[200px] sm:h-[220px] md:h-[250px]">
               <img src="assets/program/civil_prep.jpg" alt="Civil Services" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </div>
         <div class="w-full lg:w-7/12 space-y-4 text-gray-800 dark:text-white">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">01</div>
-            <h3 class="text-2xl sm:text-3xl font-semibold">Civil Services Preparation</h3>
+            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold ">Civil Services Preparation</h3>
           </div>
           <p class="text-lg leading-relaxed opacity-90">
             The core academic focus will be preparing students for Civil Services examinations, nurturing the administrative acumen necessary for leadership across sectors.
@@ -148,15 +150,17 @@
       <div class="flex flex-col lg:flex-row-reverse items-center gap-10 group">
         <div class="w-full lg:w-5/12">
           <div class="bg-gradient-to-br from-accent/20 via-white/10 to-transparent p-1 rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl h-[200px] sm:h-[220px] md:h-[250px]">
               <img src="assets/program/leadership.jpg" alt="Leadership Training" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </div>
         <div class="w-full lg:w-7/12 space-y-4 text-gray-800 dark:text-white">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">02</div>
-            <h3 class="text-2xl sm:text-3xl font-semibold">Holistic Leadership Training</h3>
+            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold ">Holistic Leadership Training</h3>
           </div>
           <p class="text-lg leading-relaxed opacity-90">
             The program will emphasize discretion, discipline, diplomacy, resilience, ethics, and strategic leadership through experiential learning.
@@ -168,15 +172,17 @@
       <div class="flex flex-col lg:flex-row items-center gap-10 group">
         <div class="w-full lg:w-5/12">
           <div class="bg-gradient-to-br from-accent/20 via-white/10 to-transparent p-1 rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl h-[200px] sm:h-[220px] md:h-[250px]">
               <img src="assets/program/global.jpg" alt="Global Exposure" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </div>
         <div class="w-full lg:w-7/12 space-y-4 text-gray-800 dark:text-white">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">03</div>
-            <h3 class="text-2xl sm:text-3xl font-semibold">Global Academic Exposure</h3>
+            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold ">Global Academic Exposure</h3>
           </div>
           <p class="text-lg leading-relaxed opacity-90">
             Students will undertake accredited online courses in Artificial Intelligence, Leadership, and Strategy from institutions such as IITs, IIMs, and Harvard Business School.
@@ -188,15 +194,17 @@
       <div class="flex flex-col lg:flex-row-reverse items-center gap-10 group">
         <div class="w-full lg:w-5/12">
           <div class="bg-gradient-to-br from-accent/20 via-white/10 to-transparent p-1 rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl h-[200px] sm:h-[220px] md:h-[250px]">
               <img src="assets/program/personalize.jpg" alt="Mentorship & Wellness" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </div>
         <div class="w-full lg:w-7/12 space-y-4 text-gray-800 dark:text-white">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">04</div>
-            <h3 class="text-2xl sm:text-3xl font-semibold">Personalized Mentorship & Wellness</h3>
+            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-semibold ">Personalized Mentorship & Wellness</h3>
           </div>
           <p class="text-lg leading-relaxed opacity-90">
             A strict regime of discipline, daily yoga, and continuous interaction with experienced mentors and faculty will hone each student's leadership capabilities.
@@ -208,14 +216,16 @@
       <div class="flex flex-col lg:flex-row items-center gap-10 group">
         <div class="w-full lg:w-5/12">
           <div class="bg-gradient-to-br from-accent/20 via-white/10 to-transparent p-1 rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-            <div class="relative overflow-hidden rounded-xl">
+            <div class="relative overflow-hidden rounded-xl h-[200px] sm:h-[220px] md:h-[250px]">
               <img src="assets/program/incubaton.jpg" alt="Leadership Incubator" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </div>
         <div class="w-full lg:w-7/12 space-y-4 text-gray-800 dark:text-white">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl font-bold">05</div>
+            <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xl">
+              <i class="fas fa-check"></i>
+            </div>
             <h3 class="text-2xl sm:text-3xl font-semibold">Leadership Incubator</h3>
           </div>
           <p class="text-lg leading-relaxed opacity-90">
@@ -230,11 +240,13 @@
 
 
 
+
+
 <!-- program includes end -->
 
 <!-- Programme Methodology -->
 <!-- Programme Methodology -->
-<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+<section id="methodology" class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
   <div class="max-w-6xl mx-auto">
 
     <!-- Heading -->
@@ -252,8 +264,10 @@
 
       <!-- Card 1 -->
       <div class="bg-white dark:bg-[#111827] rounded-2xl shadow-lg border border-accent/30 p-6 flex flex-col gap-4 hover:shadow-2xl transition-all">
-        <div class="text-accent text-3xl"><i class="fas fa-chalkboard-teacher"></i></div>
-        <h3 class="text-xl font-bold">Expert-Led Lectures</h3>
+        <h3 class="text-xl font-bold flex items-center gap-3 text-accent">
+          <i class="fas fa-chalkboard-teacher text-base sm:text-lg"></i>
+          <span class="text-secondary dark:text-white">Expert-Led Lectures</span>
+        </h3>
         <p class="text-base opacity-90 leading-relaxed">
           Panel of UPSC veterans, subject experts, retired civil servants delivering sessions beyond syllabus — building critical thinking.
         </p>
@@ -261,8 +275,10 @@
 
       <!-- Card 2 -->
       <div class="bg-white dark:bg-[#111827] rounded-2xl shadow-lg border border-accent/30 p-6 flex flex-col gap-4 hover:shadow-2xl transition-all">
-        <div class="text-accent text-3xl"><i class="fas fa-users-cog"></i></div>
-        <h3 class="text-xl font-bold">Real-World Interactions</h3>
+        <h3 class="text-xl font-bold flex items-center gap-3 text-accent">
+          <i class="fas fa-users-cog text-base sm:text-lg"></i>
+          <span class="text-secondary dark:text-white">Real-World Interactions</span>
+        </h3>
         <p class="text-base opacity-90 leading-relaxed">
           Interactions with bureaucrats, political & business leaders to gain insights in governance, policy, and leadership.
         </p>
@@ -270,8 +286,10 @@
 
       <!-- Card 3 -->
       <div class="bg-white dark:bg-[#111827] rounded-2xl shadow-lg border border-accent/30 p-6 flex flex-col gap-4 hover:shadow-2xl transition-all">
-        <div class="text-accent text-3xl"><i class="fas fa-user-friends"></i></div>
-        <h3 class="text-xl font-bold">Personal Mentorship</h3>
+        <h3 class="text-xl font-bold flex items-center gap-3 text-accent">
+          <i class="fas fa-user-friends text-base sm:text-lg"></i>
+          <span class="text-secondary dark:text-white">Personal Mentorship</span>
+        </h3>
         <p class="text-base opacity-90 leading-relaxed">
           One-on-one strategy sessions, doubt-solving, and psychological support through assigned mentors and faculty.
         </p>
@@ -284,8 +302,10 @@
 
       <!-- Card 4 -->
       <div class="bg-white dark:bg-[#111827] rounded-2xl shadow-lg border border-accent/30 p-6 flex flex-col gap-4 hover:shadow-2xl transition-all w-full lg:w-[30%]">
-        <div class="text-accent text-3xl"><i class="fas fa-chess-knight"></i></div>
-        <h3 class="text-xl font-bold">Team-Based Challenges</h3>
+        <h3 class="text-xl font-bold flex items-center gap-3 text-accent">
+          <i class="fas fa-chess-knight text-base sm:text-lg"></i>
+          <span class="text-secondary dark:text-white">Team-Based Challenges</span>
+        </h3>
         <p class="text-base opacity-90 leading-relaxed">
           Mock parliaments, group tasks, and collaborative simulations to nurture communication and decision-making skills.
         </p>
@@ -293,8 +313,10 @@
 
       <!-- Card 5 -->
       <div class="bg-white dark:bg-[#111827] rounded-2xl shadow-lg border border-accent/30 p-6 flex flex-col gap-4 hover:shadow-2xl transition-all w-full lg:w-[30%]">
-        <div class="text-accent text-3xl"><i class="fas fa-people-arrows"></i></div>
-        <h3 class="text-xl font-bold">Socializing & Networking</h3>
+        <h3 class="text-xl font-bold flex items-center gap-3 text-accent">
+          <i class="fas fa-people-arrows text-base sm:text-lg"></i>
+          <span class="text-secondary dark:text-white">Socializing & Networking</span>
+        </h3>
         <p class="text-base opacity-90 leading-relaxed">
           Treks, debates, mixers, and cultural evenings — designed to build peer bonding, empathy, and emotional intelligence.
         </p>
@@ -337,14 +359,15 @@
 
 
 <!-- Residential Life at Fort Ramshehar -->
-<!-- ULTRA PREMIUM: Residential Life at Fort Ramshehar -->
-<section class="bg-gradient-to-b from-white to-gray-50 dark:from-[#0F172A] dark:to-[#0B1320] py-28 px-6 sm:px-10 lg:px-20 relative overflow-hidden">
-  <!-- Decorative elements -->
-  <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
-    <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-accent blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-accent blur-3xl"></div>
-  </div>
+<!-- Residential Life Section with Background Image -->
+<section id="residential" 
+  class="relative bg-cover bg-center bg-no-repeat bg-fixed py-28 px-6 sm:px-10 lg:px-20 overflow-hidden"
+  style="background-image: url('assets/images/IMG_1889-min.jpg');">
 
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-white/70 dark:bg-[#0F172A]/70 backdrop-blur-sm z-0"></div>
+
+  <!-- Content Container -->
   <div class="max-w-6xl mx-auto space-y-24 relative z-10">
 
     <!-- Premium Heading -->
@@ -352,10 +375,10 @@
       <h2 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-secondary mb-6 relative inline-block">
         <span class="relative z-10">
           Residential Life at Fort Ramshehar
-          <span class="absolute left-0 bottom-0 w-full h-1 bg-accent transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700"></span>
+          <span class="absolute left-0 bottom-0 w-full h-1 bg-accent transform scale-x-0 origin-left  "></span>
         </span>
       </h2>
-      <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      <p class="text-gray-700 dark:text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
         The residential experience at Fort Ramshehar offers more than just a place to study—it provides a complete ecosystem for disciplined, joyful, and purpose-driven learning.
       </p>
     </div>
@@ -363,86 +386,45 @@
     <!-- Experience Rows -->
     <div class="space-y-20 text-sm sm:text-base lg:text-lg leading-relaxed">
 
-      <!-- 1 -->
+      <!-- Reusable Row Template -->
       <div class="flex flex-col md:flex-row items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-tree"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">A Distraction-Free, Heritage Environment</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300 4">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">A Distraction-Free, Heritage Environment</h3>
           <p class="opacity-90">Set within the majestic walls of Fort Ramshehar, the campus offers quietude, clarity, and deep focus—far from urban noise and digital clutter. The atmosphere is designed to help students detach from distractions and dive deep into preparation.</p>
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="flex flex-col md:flex-row-reverse items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:-translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">Peer-to-Peer Learning & Collaboration</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300 ">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Peer-to-Peer Learning & Collaboration</h3>
           <p class="opacity-90">Living and learning together with aspirants from diverse backgrounds creates powerful peer-learning opportunities. From informal debates to late-night strategy discussions, the environment fosters collaborative growth and healthy academic competition.</p>
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="flex flex-col md:flex-row items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">Community Engagement & Local Interaction</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300 ">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Community Engagement & Local Interaction</h3>
           <p class="opacity-90">Students will have the chance to interact with the local community, participate in social drives, and understand the grassroots realities of India—a critical perspective for any future civil servant or leader.</p>
         </div>
       </div>
 
-      <!-- 4 -->
       <div class="flex flex-col md:flex-row-reverse items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-utensils"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:-translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">Healthy Food & Well-Being</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300 ">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Healthy Food & Well-Being</h3>
           <p class="opacity-90">Wholesome, nutritious meals are provided to maintain physical energy and mental clarity. Special focus is given to dietary variety, cleanliness, and routine to support long-term performance and wellness.</p>
         </div>
       </div>
 
-      <!-- 5 -->
       <div class="flex flex-col md:flex-row items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-university"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">Cultural & Social Enrichment</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Cultural & Social Enrichment</h3>
           <p class="opacity-90">Life at Ramshehar includes regular social and cultural events—debates, talent nights, group treks, and heritage walks—ensuring that students develop emotional resilience, self-expression, and community spirit.</p>
         </div>
       </div>
 
-      <!-- 6 -->
       <div class="flex flex-col md:flex-row-reverse items-start gap-10 group" data-aos="fade-up">
-        <div class="text-accent relative">
-          <div class="text-[70px] sm:text-[90px] md:text-[100px] transition-all duration-500 group-hover:scale-110 group-hover:text-accent-dark">
-            <i class="fas fa-people-arrows"></i>
-          </div>
-          <div class="absolute inset-0 rounded-full bg-accent/10 -z-10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-        </div>
-        <div class="md:w-2/3 space-y-4 transition-all duration-300 group-hover:-translate-x-4">
-          <h3 class="text-2xl sm:text-3xl font-bold">Off-Site Learning & Gatherings</h3>
+        <div class="md:w-2/3 space-y-4 transition-all duration-300 ">
+          <h3 class="text-2xl sm:text-3xl font-bold text-secondary">Off-Site Learning & Gatherings</h3>
           <p class="opacity-90">Occasional off-site get-togethers and excursions offer a refreshing break and expand learning beyond the classroom. These events are designed to rejuvenate the mind while strengthening group bonds.</p>
         </div>
       </div>
@@ -451,10 +433,11 @@
   </div>
 </section>
 
+
 <!-- resedential end -->
 
 <!-- Life at Fort Ramshehar - Image Gallery (Improved) -->
-<section class="bg-white dark:bg-[#0F172A] py-20 px-4 sm:px-10 lg:px-20 relative">
+<section id="gallery" class="bg-white dark:bg-[#0F172A] py-20 px-4 sm:px-10 lg:px-20 relative">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-4xl sm:text-5xl font-serif font-bold text-secondary mb-12 text-center relative inline-block after:content-[''] after:absolute after:left-1/2 after:-bottom-2 after:-translate-x-1/2 after:h-1 after:w-16 after:bg-accent after:rounded-full">
       Glimpses of Fort Ramshehar
@@ -472,7 +455,7 @@
         custom-scrollbar rounded-lg">
         <!-- Image <img> tags go here -->
                           <img src="assets/images/DSC_0020-min.JPG" alt="Gallery Image" class="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[40%] h-[300px] object-cover rounded-2xl shadow-md cursor-pointer transition-transform hover:scale-[1.02]" onclick="openFullscreen(this.src)">
-      
+        <!-- <img src="assets/images/DSC_3437-min.jpg" alt="Gallery Image" class="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[40%] h-[300px] object-cover rounded-2xl shadow-md cursor-pointer transition-transform hover:scale-[1.02]" onclick="openFullscreen(this.src)"> -->
         <img src="assets/images/DSC_6501-min.jpg" alt="Gallery Image" class="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[40%] h-[300px] object-cover rounded-2xl shadow-md cursor-pointer transition-transform hover:scale-[1.02]" onclick="openFullscreen(this.src)">
         <img src="assets/images/DSC_6543-min.jpg" alt="Gallery Image" class="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[40%] h-[300px] object-cover rounded-2xl shadow-md cursor-pointer transition-transform hover:scale-[1.02]" onclick="openFullscreen(this.src)">
         <img src="assets/images/DSC_6685-min.jpg" alt="Gallery Image" class="snap-start min-w-[85%] sm:min-w-[60%] lg:min-w-[40%] h-[300px] object-cover rounded-2xl shadow-md cursor-pointer transition-transform hover:scale-[1.02]" onclick="openFullscreen(this.src)">
@@ -500,6 +483,11 @@
       </button>
     </div>
   </div>
+
+
+
+
+  
 </section>
 
 <!-- Fullscreen Modal -->
@@ -511,6 +499,118 @@
 
 
 <!-- gallery end -->
+<section class="py-6">
+  <div class="flex justify-center gap-3 sm:gap-5">
+
+    <!-- Page 1 -->
+    <a href="index.html"
+       class="w-10 h-10 flex items-center justify-center rounded-md border border-accent text-secondary font-medium bg-white hover:bg-accent hover:text-white transition-all duration-300">
+      1
+    </a>
+
+    <!-- Page 2 - Active -->
+    <span class="w-10 h-10 flex items-center justify-center rounded-md bg-accent text-white font-bold shadow">
+      2
+    </span>
+
+    <!-- Page 3 -->
+    <a href="admissions.html"
+       class="w-10 h-10 flex items-center justify-center rounded-md border border-accent text-secondary font-medium bg-white hover:bg-accent hover:text-white transition-all duration-300">
+      3
+    </a>
+
+  </div>
+</section>
+
+<!-- 🌐 EXPLORE MORE for Programme Page (Only Advisory + Why Choose Highlighted) -->
+<section class="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-10 lg:px-20 border-t border-accent/10 text-white"
+         style="background-image: url('assets/images/DSC_7649-min.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto text-center space-y-10">
+
+    <!-- Heading -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-accent relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-full after:bg-white/80 after:rounded">
+        Explore More
+      </h2>
+      <p class="text-white/90 mt-4 max-w-xl mx-auto text-base sm:text-lg">
+        Dive deeper into our philosophy and learn how to join this transformational journey.
+      </p>
+    </div>
+
+    <!-- Grid Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+
+      <!-- Home Page Sections -->
+      <a href="index.html#vision"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Our Vision
+      </a>
+
+      <a href="index.html#director1"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Leadership Message
+      </a>
+
+    
+
+      <!-- 🔥 Highlighted: Advisory Board -->
+      <a href="index.html#advisory-board"
+        class="  explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        Advisory Board
+      </a>
+
+      <!-- 🔥 Highlighted: Why Choose This Programme -->
+      <a href="index.html#why-choose"
+        class="  explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        Why Choose This Programme
+      </a>
+
+      <!-- Admissions Page Sections -->
+      <a href="admissions.html#who"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Who Can Apply?
+      </a>
+
+      <a href="admissions.html#gain"
+        class="  explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        What You Will Gain
+      </a>
+
+      <a href="admissions.html#process"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Application Process
+      </a>
+
+      <a href="admissions.html#fees"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Fee Structure
+      </a>
+
+      <a href="admissions.html#contact"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Contact & Apply
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
   <!-- Footer -->
 <footer class="bg-primaryDark text-white py-10">
@@ -589,6 +689,19 @@
     document.documentElement.classList.remove('dark');
   }
 </script>
+<a href="tel:9501114021" class="floating-call-icon" aria-label="Call Now">
+  <i class="fas fa-phone"></i>
+</a>
 
+<!-- ☎️ Call Button -->
+<a href="tel:9501114021" class="floating-call-icon" aria-label="Call Now">
+  <i class="fas fa-phone"></i>
+</a>
+
+<!-- 🔝 Scroll to Top Button (Right Side) -->
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+        class=" right-btn fixed animate-none z-50 right-6 bottom-[30%] w-11 h-11 bg-accent text-white text-lg rounded-full flex items-center justify-center shadow-lg animate-[glow-blink_1.6s_ease-in-out_infinite] hover:scale-110 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
 </body>
 </html>
