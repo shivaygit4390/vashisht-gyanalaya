@@ -1,45 +1,845 @@
-<!--
-Original index.html content has been commented out below.
--->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>Link Expired</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-    .message-box {
-      border: 2px solid #ccc;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #dc3545;
-    }
-    p {
-      font-size: 1.2em;
-      color: #333;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasisht Gyanalay</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            primaryDark: '#0F172A',
+            secondary: '#D97706',
+            accent: '#FBBF24',
+            light: '#E2E8F0'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Merriweather', 'serif']
+          },
+          boxShadow: {
+            'nav': '0 4px 20px rgba(0, 0, 0, 0.15)',
+            'button': '0 4px 10px rgba(217, 119, 6, 0.3)'
+          }
+        }
+      }
+    };
+  </script>
+
+
+
+
+<link rel="stylesheet" href="index.css">
+
+
+
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <div class="message-box">
-    <h1>Link Expired</h1>
-    <p>This was a temporary link and has expired.</p>
-    <p>Please contact the owner to get a permanent link or to renew the temporary one.</p>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-primaryDark dark:text-white min-h-screen font-sans">
+
+  <!-- Navbar Start -->
+  <header class="sticky top-0 z-50 bg-primaryDark dark:bg-primaryDark text-white shadow-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-secondary p-2 rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+          </svg>
+        </div>
+        <a href="index.html"><div class="flex flex-col">
+          <span class="font-serif font-bold text-secondary text-2xl md:text-3xl tracking-wider">VASISHT</span>
+          <span class="text-xs font-medium tracking-wider text-light dark:text-gray-300 opacity-90">GYANALAY</span>
+        </div></a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 font-medium">
+ <a href="index.html" class="relative py-2 px-1 group border-b-2 border-secondary">
+  <i class="fas fa-home text-xl text-white"></i>
+  <span class="sr-only">Home</span>
+</a>
+
+        <a href="programme.html" class="relative  py-2 px-1 hover:text-accent transition-colors duration-300 group">
+          Programme
+          <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="admissions.html" class="relative py-2 px-1 hover:text-accent transition-colors duration-300 group">
+          Admissions
+          <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="./admissions.html" class="bg-secondary px-5 py-2 rounded-full text-white hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 shadow-button transform hover:-translate-y-0.5">
+          Reach Us
+        </a>
+      </nav>
+
+      <!-- Right Icons -->
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-full hover:bg-white/10 transition" title="Toggle Dark Mode">
+          <i class="fas fa-moon text-light w-5 h-5"></i>
+        </button>
+        <button id="menuToggle" class="md:hidden p-2 rounded hover:bg-white/10 transition">
+          <i class="fas fa-bars text-xl text-light"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-primaryDark px-6 py-4 space-y-4 font-medium text-white transition-all duration-300 transform origin-top">
+      <a href="index.html" class="block py-2 px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        <i class="fas fa-home"></i>
+        <span class="sr-only">Home</span>
+      </a>
+      <a href="programme.html" class="block py-2 px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        Programme
+      </a>
+      <a href="admissions.html" class="block py-2 px-4 hover:bg-primary/50 rounded-lg transition-colors duration-300 group">
+        Admissions
+      </a>
+      <a href="/admissions.html" class="inline-block w-full text-center bg-secondary text-white px-6 py-3 rounded-full hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 mt-2">
+        Reach Us
+      </a>
+    </div>
+  </header>
+  <!-- Navbar End -->
+
+  <!-- hero begin -->
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="relative w-full h-[90vh] bg-cover bg-center bg-no-repeat text-white flex items-center justify-center"
+         style="background-image: url('assets/images/IMG_1889-min.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 dark:bg-black/70 z-0"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center max-w-5xl w-full px-6 sm:px-10 lg:px-16">
+    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-serif font-bold mb-6 leading-tight lg:leading-[1.2]">
+      A Residential Programme for Preparing Future Bureaucrats And Leaders Of India
+    </h1>
+    <p class="text-base sm:text-lg lg:text-2xl text-gray-100 dark:text-gray-300 mb-8 leading-relaxed">
+      One-Year Integrated Residential Programme for Transformational Leadership
+    </p>
+
+    <!-- Info Row -->
+    <div class="flex flex-wrap justify-center gap-5 text-sm sm:text-base text-white/90 dark:text-white/80 mb-10">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-accent"></i> Fort Ramshehar, Himachal Pradesh
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-accent"></i> 12 Months
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-home text-accent"></i> Residential
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="./admissions.html" class="bg-secondary text-white px-8 py-3 rounded-full font-medium shadow-button hover:bg-white hover:text-secondary border-2 border-secondary transition-all duration-300 text-base sm:text-lg">
+      Apply Now
+    </a>
   </div>
+</section>
+
+
+
+
+  <!-- hero end -->
+
+
+<!-- Intro Section -->
+<!-- Enhanced Intro Section -->
+<section class="relative bg-gradient-to-br from-gray-100 via-white to-gray-50 dark:from-[#111827] dark:via-[#0F172A] dark:to-[#0D1B2A] py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-secondary mb-6 relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-full after:bg-accent after:rounded">
+      One-Year Integrated Residential Programme for Transformational Leadership
+    </h2>
+
+    <!-- Paragraph -->
+    <p class="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-14 font-medium">
+      We propose the establishment of an exclusive institute dedicated to cultivating transformational leadership along with civil services preparation.
+    </p>
+
+    <!-- Cards Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Card 1: Location -->
+      <a href="https://maps.app.goo.gl/QZ3yRCyuDx36YNKg7">
+        <div class="relative flex flex-col items-center justify-center text-center text-white rounded-2xl overflow-hidden min-h-[160px] p-6 bg-cover bg-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:ring-2 hover:ring-accent"
+             style="background-image: url('assets/images/DSC_7147-min.jpg');">
+          <div class="absolute inset-0 bg-black/60"></div>
+          <div class="relative z-10">
+            <div class="bg-accent/20 p-3 rounded-full mb-3">
+              <i class="fas fa-map-marker-alt text-accent text-2xl"></i>
+            </div>
+            <p class="font-semibold text-white shadow-md">
+              Historic Fort Ramshehar, Himachal Pradesh
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Duration -->
+      <div class="relative flex flex-col items-center justify-center text-center text-white rounded-2xl overflow-hidden min-h-[160px] p-6 bg-cover bg-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:ring-2 hover:ring-accent"
+           style="background-image: url('assets/images/IMG_6581-min.jpg');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10">
+          <div class="bg-accent/20 p-3 rounded-full mb-3">
+            <i class="fas fa-clock text-accent text-2xl"></i>
+          </div>
+          <p class="font-semibold text-white shadow-md">
+            12 Months
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: Mode -->
+      <div class="relative flex flex-col items-center justify-center text-center text-white rounded-2xl overflow-hidden min-h-[160px] p-6 bg-cover bg-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:ring-2 hover:ring-accent"
+           style="background-image: url('assets/images/DSC_7536-min.jpg');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10">
+          <div class="bg-accent/20 p-3 rounded-full mb-3">
+            <i class="fas fa-building text-accent text-2xl"></i>
+          </div>
+          <p class="font-semibold text-white shadow-md">
+            Residential (Full-time Academic & Leadership Training)
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+ <!-- intro ends -->
+
+
+<!-- Our Vision Section (Left-aligned version) -->
+<section id="vision" class="bg-gradient-to-br from-white to-gray-100 dark:from-[#0F172A] dark:to-[#111827] py-24 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Heading -->
+   <div class="mb-12">
+  <div class="border-l-2 border-secondary pl-3">
+    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-secondary relative inline-block">
+      Our Vision
+      <span class="absolute left-0 -bottom-1 h-1 w-full bg-accent rounded"></span>
+    </h2>
+  </div>
+</div>
+
+
+    <!-- Intro Paragraphs -->
+    <div class="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed space-y-6 mb-12">
+      <p>
+        At the heart of our programme lies a singular, ambitious vision:
+        <div class="font-bold"> To create a new generation of transformational leaders—rooted in values, equipped with knowledge, and empowered by innovation.</div>
+      </p>
+      <p>
+        We believe that India’s future will be shaped not just by those who clear exams, but by those who can lead with <b> courage, integrity, and vision.</b>
+      </p>
+    </div>
+
+    <!-- Vision Goals List -->
+    <div class="grid sm:grid-cols-2 gap-6 text-gray-800 dark:text-white text-base">
+      <div class="flex items-start gap-3 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5 rounded-lg shadow-sm border border-white/20 hover:shadow-md transition">
+        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+        <p>Civil servants who inspire change, not just implement policy</p>
+      </div>
+      <div class="flex items-start gap-3 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5 rounded-lg shadow-sm border border-white/20 hover:shadow-md transition">
+        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+        <p>Political and business leaders who prioritize ethics alongside ambition</p>
+      </div>
+      <div class="flex items-start gap-3 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5 rounded-lg shadow-sm border border-white/20 hover:shadow-md transition">
+        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+        <p>Tech-aware administrators ready to leverage AI and data for public good</p>
+      </div>
+      <div class="flex items-start gap-3 bg-white/60 dark:bg-white/5 backdrop-blur-sm p-5 rounded-lg shadow-sm border border-white/20 hover:shadow-md transition">
+        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+        <p>Individuals who lead with empathy, insight, and national purpose</p>
+      </div>
+    </div>
+
+    <!-- Follow-up Line -->
+    <p class="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed mt-12">
+      In a time of global uncertainty and rapid change, we aim to nurture <b>  leaders who are ready for complexity—yet anchored in simplicity; visionary—yet grounded in reality.</b>
+    </p>
+
+    <!-- Final Pullout Quote -->
+    <div class="mt-12 bg-accent/10 dark:bg-white/5 text-gray-800 dark:text-gray-200 border-l-4 border-secondary pl-6 py-5 italic text-lg leading-relaxed shadow-inner">
+      “This is not just an academic programme. It is a leadership crucible—where minds are sharpened, values are tested, and futures are forged.”
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- vision ending -->
+<!-- Director's Message 1 – Framed Style Right -->
+<section  id="director1" class="bg-white dark:bg-[#0F172A] py-24 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+
+    <!-- Content Left -->
+    <div class="md:col-span-3 order-2 md:order-1">
+      <!-- Heading -->
+       
+      <h3 class="text-2xl border-l-2 border-secondary pl-3 hidden lg:block sm:text-3xl font-serif font-bold text-secondary mb-6">
+        Director’s Message: On Leadership & Vision
+      </h3>
+
+      <!-- Message Block -->
+      <div class="bg-gray-50 dark:bg-white/5 text-justify border-l-4 border-accent p-6 rounded-xl shadow-sm text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed space-y-5">
+        <p><strong>Dear Students,</strong></p>
+
+        <p>We live in times where leaders must understand both policy and technology, governance and global change. Civil servants of tomorrow will not only manage public institutions—they will steer India through complex challenges like AI regulation, digital inclusion, climate justice, and national security.</p>
+
+        <p>This programme is built to create such leaders.</p>
+
+        <p>By integrating UPSC preparation with AI literacy and leadership training, we aim to give you a rare advantage—intellectual depth, ethical clarity, and futuristic vision. The residential model at Fort Ramshehar ensures you are free from distraction and immersed in a community of discipline, focus, and purpose.</p>
+
+        <p>As you begin this journey, know that you're not just preparing for an exam—you’re being groomed for service, leadership, and legacy.</p>
+
+        <!-- Signature -->
+        <div class="pt-6">
+          <p class="font-semibold text-gray-900 dark:text-white">With best wishes,</p>
+          <p class="italic text-sm text-gray-600 dark:text-gray-400 mt-1">Mandeep Mishra<br>Director and Chief Mentor</p>
+        </div>
+      </div>
+    </div>
+ <!-- Heading mobile -->
+      <h3 class="text-2xl border-l-2 border-secondary pl-3 block lg:hidden sm:text-3xl font-serif font-bold text-secondary mb-6">
+        Director’s Message: On Leadership & Vision
+      </h3>
+    <!-- Image Right -->
+    <div class="md:col-span-2 order-1 md:order-2 flex justify-center md:justify-end">
+      <div class="border-4 border-secondary p-2 rounded-xl bg-white dark:bg-primaryDark shadow-lg max-w-[240px] sm:max-w-[300px]">
+        <img src="assets/images/dir1.png" alt="Mandeep Mishra" class="w-full h-auto object-cover rounded-lg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- director 1 end -->
+
+
+<!-- Director's Message 2: On Purpose & Pedagogy -->
+<section class="bg-gray-50 dark:bg-[#0F172A] py-24 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+<!-- Heading mobile -->
+      <h3 class="text-2xl border-l-2 border-secondary pl-3 block lg:hidden sm:text-3xl font-serif font-bold text-secondary mb-6">
+        Director’s Message: On Purpose & Pedagogy
+      </h3>
+    <!-- Image Left -->
+    <div class="md:col-span-2 order-1 flex justify-center md:justify-start">
+      <div class="border-4 border-secondary p-2 rounded-xl bg-white dark:bg-primaryDark shadow-lg max-w-[240px] sm:max-w-[300px]">
+        <img src="assets/images/dir2.png" alt="Parveen Bansal" class="w-full h-auto object-cover rounded-lg" />
+      </div>
+    </div>
+
+    <!-- Content Right -->
+    <div class="md:col-span-3 order-2">
+      <!-- Heading -->
+      <h3 class="text-2xl border-l-2 border-secondary pl-3 hidden lg:block sm:text-3xl font-serif font-bold text-secondary mb-6">
+        Director’s Message: On Purpose & Pedagogy
+      </h3>
+
+      <!-- Message Block -->
+      <div class="bg-white dark:bg-white/5 text-justify border-l-4 border-accent p-6 rounded-xl shadow-sm text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed space-y-5">
+        <p><strong>Dear Aspirants,</strong></p>
+
+        <p>At Abhipedia | Abhimanu IAS, our mission has always been to prepare not just candidates for an exam, but leaders for the nation. This new initiative at Fort Ramshehar is a natural extension of that vision—a place where discipline meets inspiration, and ancient heritage nurtures modern minds.</p>
+
+        <p>The UPSC examination demands more than academic knowledge. It requires clarity of thought, moral courage, and leadership ability. Through this residential programme, we aim to offer students not just expert-led academic coaching, but a life-transforming ecosystem.</p>
+
+        <p>Here, learning doesn’t stop at the classroom. It continues through discussion circles, AI labs, ethical debates, and leadership workshops—all within the calming walls of a historic fort.</p>
+
+        <p>This is your opportunity to not just prepare for a career, but to step into your larger calling. We look forward to shaping the future with you.</p>
+
+        <!-- Signature -->
+        <div class="pt-6">
+          <p class="font-semibold text-gray-900 dark:text-white">Warm regards,</p>
+          <p class="italic text-sm text-gray-600 dark:text-gray-400 mt-1">Parveen Bansal<br>Director and Founder, Abhimanu IAS</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- dir 2 ends -->
+
+<!-- Advisory Board Section -->
+<!-- Advisory Board - Unique Horizontal Layout -->
+<section id="advisory-board" class="bg-white dark:bg-[#0F172A] py-28 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-7xl mx-auto space-y-16">
+
+    <!-- Heading -->
+    <div class="text-center mb-8" data-aos="fade-up">
+      <h2 class="text-4xl sm:text-5xl font-serif font-bold text-secondary mb-4">
+        Advisory Board
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto">
+        Eminent thinkers and leaders guiding the vision and integrity of our programme.
+      </p>
+    </div>
+
+    <!-- Advisor Rows -->
+    <div class="space-y-14">
+
+      <!-- Advisor Item -->
+      <div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up">
+        <!-- Image -->
+        <div class="shrink-0 relative">
+          <img src="assets/adv/adv1.png" alt="Sanjay Kumar" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+          <span class="absolute top-0 right-0 w-3 h-3 bg-accent rounded-full ring ring-white dark:ring-[#0F172A]"></span>
+        </div>
+
+        <!-- Details -->
+        <div class="flex-1">
+          <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+            Sanjay Kumar
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">IAS (Retd ACS Punjab)</p>
+          <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+            A former administrative services leader with a deep commitment to public welfare and policy transformation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Advisor Item -->
+      <div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="100">
+        <div class="shrink-0 relative">
+          <img src="assets/adv/adv2.png" alt="Dr Rajendra Mishra" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="flex-1">
+          <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+            Dr Rajendra Mishra
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">IPS (Retd DGP, MP)</p>
+          <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+            A seasoned law enforcement professional and a nationally respected figure in public leadership.
+          </p>
+        </div>
+      </div>
+
+      <!-- Repeat 6 more rows like this with:
+           adv3.png to adv8.png
+           Proper Name + Designation + Line of Bio
+      -->
+           <!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="200">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv3.png" alt="CJI T S Thakur" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      CJI T S Thakur
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">Chief Justice of India (Retd)</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+      Former Chief Justice of India, respected for his deep legal insight, judicial reform vision, and ethical leadership.
+    </p>
+  </div>
+</div>
+
+<!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="300">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv4.png" alt="Anand Mahindra" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      Anand Mahindra
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">To be added</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, recusandae officiis nam eius nihil odit?
+    </p>
+  </div>
+</div>
+
+<!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="400">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv5.png" alt="Sudhanshu Trivedi" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      Sudhanshu Trivedi
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">To be added</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, delectus. Eos error officia quidem alias.
+    </p>
+  </div>
+</div>
+
+<!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="500">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv6.png" alt="Hemant Sharma" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      Hemant Sharma
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">Group Editor, TV9</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+      Veteran journalist known for fearless reporting and sharp editorial leadership across India's top news networks.
+    </p>
+  </div>
+</div>
+
+<!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="600">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv7.png" alt="Narendra Konda" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      Narendra Konda
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">NVIDIA (USA)</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+      Senior global leader in AI and computing innovation, focused on bridging tech with real-world transformation.
+    </p>
+  </div>
+</div>
+
+<!-- Advisor Item -->
+<div class="flex flex-col sm:flex-row items-center gap-8 group" data-aos="fade-up" data-aos-delay="700">
+  <div class="shrink-0 relative">
+    <img src="assets/adv/adv8.png" alt="Arun Kumar Mishra" class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-accent shadow-lg group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="flex-1">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-secondary mb-1 relative inline-block after:block after:w-10 after:h-[3px] after:bg-accent after:mt-1">
+      Arun Kumar Mishra
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">to be added</p>
+    <p class="text-base text-gray-700 dark:text-gray-200 max-w-xl">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil doloremque eveniet ab! Natus, ipsam.
+    </p>
+  </div>
+</div>
+
+           
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- adv ends here -->
+
+
+
+<!-- Why Choose This Programme -->
+<!-- What the Programme Includes -->
+<section id="why-choose"  class="bg-white dark:bg-[#0F172A] py-24 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-secondary mb-12 relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-14 after:bg-accent after:rounded">
+      Why Choose this programme ?
+    </h2>
+
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 gap-8 text-gray-800 dark:text-white text-base sm:text-lg">
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-book text-accent text-2xl mt-1"></i>
+        <p>Comprehensive UPSC Mains + Prelims + Interview Preparation</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-robot text-accent text-2xl mt-1"></i>
+        <p>AI for Leaders Certification Course</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-chess-king text-accent text-2xl mt-1"></i>
+        <p>Business & Political Leadership Development Programme</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-mountain text-accent text-2xl mt-1"></i>
+        <p>Study in the Tranquility of the Himalayas</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-university text-accent text-2xl mt-1"></i>
+        <p>Heritage campus with modern academic infrastructure</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-desktop text-accent text-2xl mt-1"></i>
+        <p>24/7 access to study rooms, library & digital learning labs</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-utensils text-accent text-2xl mt-1"></i>
+        <p>High-quality food and comfortable accommodation</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-users text-accent text-2xl mt-1"></i>
+        <p>Community learning atmosphere</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-comments text-accent text-2xl mt-1"></i>
+        <p>Group discussions, debates, and public speaking practice</p>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <i class="fas fa-hiking text-accent text-2xl mt-1"></i>
+        <p>Weekend activities: trekking, sports, and cultural programs</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- why choose us ends here -->
+<section class="py-6">
+  <div class="flex justify-center gap-3 sm:gap-5">
+
+    <!-- Page 1 - Active -->
+    <span class="w-10 h-10 flex items-center justify-center rounded-md bg-accent text-white font-bold shadow">
+      1
+    </span>
+
+    <!-- Page 2 -->
+    <a href="programme.html"
+       class="w-10 h-10 flex items-center justify-center rounded-md border border-accent text-secondary font-medium bg-white hover:bg-accent hover:text-white transition-all duration-300">
+      2
+    </a>
+
+    <!-- Page 3 -->
+    <a href="admissions.html"
+       class="w-10 h-10 flex items-center justify-center rounded-md border border-accent text-secondary font-medium bg-white hover:bg-accent hover:text-white transition-all duration-300">
+      3
+    </a>
+
+  </div>
+</section>
+
+
+<!-- 🌐 EXPLORE MORE (Enhanced + Animated Highlights) -->
+<section class="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-10 lg:px-20 border-t border-accent/10 text-white"
+         style="background-image: url('assets/images/DSC_7649-min.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto text-center space-y-10">
+
+    <!-- Heading -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-accent relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[4px] after:w-full after:bg-white/80 after:rounded">
+        Explore More
+      </h2>
+      <p class="text-white/90 mt-4 max-w-xl mx-auto text-base sm:text-lg">
+        Journey deeper into the experience. Discover what makes this programme truly transformational.
+      </p>
+    </div>
+
+    <!-- Grid Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+
+      <!-- Normal Button -->
+      <a href="programme.html#includes"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        What’s Included
+      </a>
+
+      <!-- Highlighted Buttons -->
+      <a href="programme.html#methodology"
+         class=" explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        <span class="relative z-10">Methodology</span>
+      </a>
+
+      <a href="programme.html#residential"
+         class=" explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        <span class="relative z-10">Residential Life</span>
+      </a>
+
+      <a href="admissions.html#who"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Who Can Apply?
+      </a>
+
+      <a href="admissions.html#gain"
+         class=" explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        <span class="relative z-10">What You Will Gain</span>
+      </a>
+
+      <a href="admissions.html#process"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Application Process
+      </a>
+
+      <a href="admissions.html#fees"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Fee Structure
+      </a>
+
+      <a href="admissions.html#contact"
+         class="px-5 py-2 bg-white text-secondary font-semibold rounded-full border border-accent shadow-md hover:bg-accent hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+        Contact & Apply
+      </a>
+
+      <!-- Gallery Highlighted -->
+      <a href="programme.html#gallery"
+         class="  explore-highlights relative px-5 py-2 bg-accent text-white font-semibold rounded-full border border-white/30 
+         shadow-lg hover:shadow-accent/50 hover:shadow-2xl transition-all duration-500 transform hover:scale-110
+         ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-[#0F172A]
+         before:absolute before:inset-0 before:rounded-full before:border-2 before:border-accent before:animate-spin-slow before:opacity-10 before:scale-110">
+        <span class="relative z-10">Live the Beauty of a 500-Year-Old Heritage</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- hightligh explore ended here -->
+
+<!-- Footer -->
+<footer class="bg-primaryDark text-white py-10">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Left: Logo & Info -->
+      <div class="mb-6 md:mb-0">
+        <div class="flex items-center space-x-3">
+          <div class="bg-secondary p-2 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-secondary text-2xl tracking-wider">VASISHT GYANALAY</span>
+          </div>
+        </div>
+        <p class="mt-4 text-light max-w-xs">
+          Excellence in education since 2010, transforming lives through knowledge.
+        </p>
+      <p class="mt-2 text-sm text-light/80 flex flex-col gap-1">
+  <span class="flex items-center gap-2">
+    <i class="fa-solid fa-location-dot text-accent"></i>
+    <a href="#!" class="hover:text-accent  underline-offset-2" title="View Location on Map">
+      Fort Ramshehar, Himachal Pradesh
+    </a>
+  </span>
+  <span class="flex items-center gap-2">
+    <i class="fa-brands fa-whatsapp text-green-500"></i>
+    WhatsApp: 9501114021
+  </span>
+</p>
+
+      </div>
+
+      <!-- Right: Social Links -->
+      <div class="flex space-x-6">
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="#" class="text-light hover:text-accent transition">
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Strip -->
+    <div class="border-t border-primary/30 mt-8 pt-6 text-center text-light text-sm space-y-2">
+      <p>&copy; <span id="footerYear"></span> Vasisht Gyanalay. All rights reserved.</p>
+      <p class="text-[13px] text-gray-400 italic">
+        “Forge your destiny in the lap of heritage. Learn to lead, serve, and inspire — with the power of knowledge, technology, and vision.”
+      </p>
+    </div>
+
+    <!-- Hidden Dev Credit Strip -->
+    <div class="mt-4 text-center text-[12px] text-gray-500 hover:text-accent transition">
+      <a href="#!" title="Reach out to the technical team behind this site">
+        Reach out to the developer →
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- SCRIPT -->
+<script src="script.js"></script>
+<script>
+  // Apply saved theme on page load
+  if (localStorage.theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+<a href="tel:9501114021" class="floating-call-icon" aria-label="Call Now">
+  <i class="fas fa-phone"></i>
+</a>
+
+<!-- ☎️ Call Button -->
+<a href="tel:9501114021" class="floating-call-icon" aria-label="Call Now">
+  <i class="fas fa-phone"></i>
+</a>
+
+<!-- 🔝 Scroll to Top Button (Right Side) -->
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+        class=" right-btn fixed animate-none z-50 right-6 bottom-[30%] w-11 h-11 bg-accent text-white text-lg rounded-full flex items-center justify-center shadow-lg animate-[glow-blink_1.6s_ease-in-out_infinite] hover:scale-110 transition">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
 </body>
 </html>
